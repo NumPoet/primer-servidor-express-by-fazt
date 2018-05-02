@@ -1,0 +1,23 @@
+<% include partials/head.ejs %>
+    <h1>Products</h1>
+<ul>
+    <% for(var i = 0; i < items.length; i++) {%>
+        <li><%= items[i].name %></li>
+    <% } %>
+</ul>
+
+<h3>ADD a New Product</h3>
+
+<form action="/new-product" method="POST">
+    <input type="text" name="newItem" id="newItem">
+    <button>
+        Add a new product
+    </button>
+</form>
+
+<script>
+    const txtNewItem = document.getElementById('newItem');
+    txtNewItem.focus();
+</script>
+
+<% include partials/footer.ejs %>
